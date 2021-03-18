@@ -16,9 +16,19 @@
 	</head>
 
 	<body>
-		<h1>HOME PAGE</h1>
-		{% block body_block %}
+		<nav class="navbar navbar-default">
+			 <div class="container-fluid">
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Register </a></li>
+			      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login  </a></li>
+			    </ul>
+			</div>
+		</nav>
 
-		{% endblock %}
+	<div class="container">
+	  <div class="row-fluid">
+	    <div class="span12"><h1>Glasgow4Freshers</h1></div>
+	  </div>
+	</div>
 	</body>
 </html>
