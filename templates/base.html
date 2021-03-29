@@ -33,6 +33,10 @@
 			  background-color: var(--stripe);
 			}
 
+			nav {
+				border-bottom: 2px solid blue;
+			}
+
 			.container {
 				text-align: center;
 			}
@@ -49,18 +53,28 @@
 				font-family: 'Lexend', sans-serif;
 			}
 
+			.cat-selection div {
+				border: 2px solid blue;
+				border-right: 0px;
+			}
+
+			.cat-selection div:3 {
+				border: 2px solid blue;
+				border-right: 0px;
+			}
+
 			.cat-selection a {
 				text-decoration: none;
 				color: black;
 			}
 
-			.cats {
-			}
+
 
 			.homecontent {
 				width: 100%;
 				height: auto;
 				background: white;
+				border: 2px solid blue;
 			}
 
 			.hometitles {
@@ -94,9 +108,9 @@
 	  </div>
 
 	  <div class="row cat-selection justify-content-center">
-	  	<a href="#" ><div class="col-sm cats"><h2>ENTERTAINMENT</a></h2></div>
-	  	<a href="#" ><div class="col-sm cats"><h2>HISTORICAL</a></h2></div>
-	  	<a href="#" ><div class="col-sm cats"><h2>EDUCATIONAL</a></h2></div>
+	  	<div class="col-sm cats"><a href="#" ><h2>ENTERTAINMENT</a></h2></div>
+	  	<div class="col-sm cats"><a href="#" ><h2>HISTORICAL</a></h2></div>
+	  	<div style="border-right: 2px solid blue" class="col-sm cats"><a href="#" ><h2>EDUCATIONAL</a></h2></div>
 	  </div>
 	</div>
 	</div>
