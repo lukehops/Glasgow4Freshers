@@ -57,6 +57,13 @@
 			.cats {
 			}
 
+			.homecontent {
+				width: 100%;
+				height: auto;
+				background: white;
+			}
+
+
 
 
 
@@ -89,9 +96,19 @@
 	  	<a href="#" ><div class="col-sm cats"><h2>EDUCATIONAL</a></h2></div>
 	  </div>
 	</div>
+	</div>
+	<br />
 
-</div>
 
-	
+	{% block body_block %}
+	{% endblock %}
+
+
+<br />
+<br />
+<footer class="page-footer font-small pt-4">
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:<a href="#"> Glasgow4Freshers</a></div>
+</footer>
+
 	</body>
 </html>
