@@ -11,20 +11,20 @@ class Category(models.Model):
 		verbose_name_plural = "Categories"
 
 class Place(models.Model):
-
+	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	name = models.CharField(max_length=128)
+	description = models.TextField()
 
 	def __str__(self):
-		return self.title
+		return self.name
 
 class Review(models.Model):
+	place = models.ForeignKey(Place, on_delete=models.CASCADE)
+	rating = models.IntegerField()
+	review_text = models.TextField()
+	name = models.CharField(max_length=128)
+	review_date = models.DateField()
+	likes = models.IntegerField()
+	dislikes = models.IntegerField()
 
 
-	def __str__(self):
-		return self.title
-
-
-class UserProfile(models.Model):
-
-
-	def __str__(self):
-		return self.user.username

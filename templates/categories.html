@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %} 
+	Homepage
+{% endblock %}
+
+{% block body_block %}
+	<div style="text-align: left;" class="container homecontent">
+
+      <div class="row">
+            <div class="col">
+                 <img src="..." alt="..." class="img-thumbnail">
+            </div>
+            <div class="col-8">
+                 <h2>Category Name</h2>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis in augue nec fermentum. Nullam laoreet sit amet dolor non maximus. Sed non aliquam neque. Nulla quis eros nec elit fermentum posuere. Ut ac vulputate tellus, et ultrices justo. Nullam volutpat risus ac nunc consectetur venenatis. Nullam malesuada arcu nisi, non iaculis enim vestibulum varius. Etiam tincidunt nisl a orci varius placerat et sed sapien.</p>
+            </div>
+      </div>    
+      <hr />
+
+ <!--
+  <div class="row">
+            <div class="col">
+                 <img src="..." alt="..." class="img-thumbnail">
+            </div>
+            <div class="col-8">
+                 <h2>{{ place_name }}</h2>
+                 <p>{{ place_description }}... </p>
+            </div>
+      </div>
+  
+  !-->
+
+	  </div>
+
+{% endblock  %}

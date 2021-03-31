@@ -20,4 +20,6 @@ from G4F_APP import views
 urlpatterns = [
 	path('', views.index, name="index"),
     path('admin/', admin.site.urls),
+    path('category/', views.categories, name='categories'),
+
 ]
