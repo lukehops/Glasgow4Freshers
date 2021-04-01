@@ -5,7 +5,8 @@ Everyone will be able to view the list of places of interest which will be sorte
 Users will be able to create an account to leave reviews and ratings on the places of interest, as well as view other people’s reviews.
 Users with an account will also be able to create a listing for a place of interest which includes pictures, a description and a review of their chosen location
 
-Specification&Requirements:
+***
+### Specification&Requirements:
 
 Users must be able to create an account
 Users must be able to leave reviews and a rating for places in Glasgow
