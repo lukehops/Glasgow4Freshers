@@ -3,6 +3,39 @@
 
 {% block body_block %}
   {% if place %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+$.fn.starsystem = function() {
+    return $(this).each(function() {
+        var ratingwidth = parseFloat($(this).html()) * 16;
+        var $span = $('<span />').width(ratingwidth);
+        $(this).html($span);
+    });
+}
+
+$(function() {
+    $('span.star-system').starsystem();
+});
+
+</script>
+
+
+<style>
+  
+span.star-system, span.star-system>* {
+    display: inline-block;
+    background: url({{MEDIA_URL}}star.png) 0 25px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+span.star-system>*{
+    max-width:80px;
+    background-position: 0 0;
+}
+
+
+
+</style>
 	<div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
     <div class="row">
                   <div class="col">
@@ -45,7 +78,7 @@
                         <p>This dive center is incredibly well organized and is at the top of its game.</p>
                     </div>
                       <div class="row pb-3">
-                        <p><b>Rating: </b>{{ review.rating }}/5</p>
+                        <p><b>Rating: {{ review.rating }} (<span class="star-system">{{ review.rating }}</span>)
                     </div>
                     <div class="row pb-3">
                       <button style=" background-color:rgba(38,166,154 ,0.3); width: 49.5%;"class="like">
