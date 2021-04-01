@@ -20,5 +20,13 @@ def show_category(request, category_name_slug):
 
 	return render(request, 'categories.html', context=context_dict)
 
-def placeTesting(request):
-	return render(request, 'place.html')
+def show_place(request, category_name_slug, place_name_slug):
+	context_dict = {}
+
+	try:
+		place = Place.objects.get(slug=place_name_slug)
+		context_dict['place'] = place
+	except Category.DoesNotExist:
+		context_dict['place'] = None
+
+	return render(request, 'place.html', context=context_dict)

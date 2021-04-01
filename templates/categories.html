@@ -18,6 +18,7 @@
 
     {% if places %}
     {% for place in places %}
+    <a style="text-decoration: none;" href="{% url 'show_place' category.slug place.slug %}">
 	<div style="text-align: left; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
       <div class="row">
             <div class="col">
@@ -29,6 +30,7 @@
             </div>
       </div>    
 	  </div>
+  </a>
     {% endfor %}
     {% endif %}
 
