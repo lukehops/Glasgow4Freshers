@@ -44,6 +44,9 @@
                     <div class="row pb-3">
                         <p>This dive center is incredibly well organized and is at the top of its game.</p>
                     </div>
+                      <div class="row pb-3">
+                        <p><b>Rating: </b>{{ review.rating }}/5</p>
+                    </div>
                     <div class="row pb-3">
                       <button style=" background-color:rgba(38,166,154 ,0.3); width: 49.5%;"class="like">
                           <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
@@ -52,6 +55,16 @@
                       <button style="margin-left: 1%; width: 49.5%; background-color: rgba(255,138,128 ,0.3);" class="dislike">
                           <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
                           <p>{{ review.dislikes }}</p>
+                        </button>
+                    </div>
+
+                    <!-- Logged in users only that own the review or ADMIN user logged in !-->
+                     <div class="row pb-3">
+                      <button style=" width: 49.5%;"class="btn-success">
+                        Edit
+                        </button>
+                      <button style="margin-left: 1%; width: 49.5%;" class="btn-danger">
+                         Remove
                         </button>
                     </div>
                   </div>
