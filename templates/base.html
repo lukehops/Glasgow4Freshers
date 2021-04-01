@@ -18,27 +18,20 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&family=New+Tegomin&display=swap" rel="stylesheet">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Work+Sans:wght@900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
 
 		<style>
 
-			body {
-			  --stripe: #E6E6E6;
-			  --bg: #e1e1e1;
-
-			  background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
-			    linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
-			    linear-gradient(315deg, var(--bg) 25%, transparent 25%),
-			    linear-gradient(45deg, var(--bg) 25%, transparent 25%);
-			  background-size: 100px 100px;
-			  background-color: var(--stripe);
-			}
-
 			nav {
-				border-bottom: 2px solid blue;
+				font-family: 'Ubuntu', sans-serif;
 			}
 
 			.container {
 				text-align: center;
+				font-family: 'Ubuntu', sans-serif;
 			}
 
 			.mainheading {
@@ -53,19 +46,20 @@
 				font-family: 'Lexend', sans-serif;
 			}
 
-			.cat-selection div {
-				border: 2px solid blue;
-				border-right: 0px;
-			}
-
-			.cat-selection div:3 {
-				border: 2px solid blue;
-				border-right: 0px;
-			}
-
+	
 			.cat-selection a {
 				text-decoration: none;
 				color: black;
+			}
+
+			.cat-selection a:hover {
+				color: #0000b2;
+				font-weight: bold;
+				background: lightblue;
+			}
+
+			nav {
+				background: #0000b2;
 			}
 
 
@@ -82,52 +76,136 @@
 			}
 
 
+#hero {
+  width: 100%;
+  position: relative;
+  background: #0000b2;
+  padding: 0;
+  color: white;
+  height: 650px;
+}
+
+#hero h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.features a {
+	text-decoration: none;
+	color: black;
+	background: white;
+	margin: 5px;
+	padding: 5px;
+}
+
+.features a:hover{
+	background: lightgray;
+	color: white;
+}
+
+.features a div{
+	width: 200px;
+}
+
+
+@media (max-width: 994px) {
+.features a {
+	width: 100%;
+}
+
+.col {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+}
 
 
 
-
-
-		</style>
+	</style>
 	</head>
 
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			  <a class="navbar-brand" href="#">Glasgow4Freshers</a>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a style="color: white;" class="navbar-brand" href="#"><b>GLASGOW4FRESHERS</b></a>
 			<ul class="navbar-nav ml-auto">
 			    <li class="nav-item">
-			      <a class="nav-link">Login</a>
+			      <a style="color: white" class="nav-link">Login</a>
 			    </li>
 			    <li class="nav-item">
-			      <a class="nav-link">Register</a>
+			      <a style="color: white" class="nav-link">Register</a>
 			    </li>
 			</ul>
 		</nav>
 
-<br />
-	<div class="container">
-	  <div class="row mainheading justify-content-center align-items-center">
-	  	<b>Please choose a category...</b>
-	  </div>
+<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div style="margin-bottom: 50px; font-size: 2em; font-family: 'Ubuntu'"; class="d-inline-flex p-2">Please Choose A Category:</div>
+<section class="features">
+      <div class="container">
+        <div class="row">
+        <a href="#">
+          <div class="col">
+              <i style="font-size: 2rem;" class="bi-binoculars"></i>
+              <p>Entertainment</p>
+          </div>
+          </a>
+            
+            <a href="#">
+          <div class="col">
+            <i style="font-size: 2rem;" class="bi-clock-history"></i>
+			<p>Historical</p>
+          </div>          </a>
 
-	  <div class="row cat-selection justify-content-center">
-	  	<div class="col-sm cats"><a href="#" ><h2>ENTERTAINMENT</a></h2></div>
-	  	<div class="col-sm cats"><a href="#" ><h2>HISTORICAL</a></h2></div>
-	  	<div style="border-right: 2px solid blue" class="col-sm cats"><a href="#" ><h2>EDUCATIONAL</a></h2></div>
-	  </div>
-	</div>
-	</div>
-	<br />
+            <a  href="#">
+          <div class="col">
+             <i style="font-size: 2rem;" class="bi-tree"></i>
+             <p>Parks</p>
+          </div>
+          </a>
+
+            <a href="#">
+          <div class="col">
+              <i style="font-size: 2rem;" class="bi-book"></i>
+              <p>Educational</p>
+          </div>
+           </a>
+
+        </div>
+    </div>
+</section>
+
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="rgba(255,255,255, .2)">
+      </g>
+    </svg>
+
+  </section>
+
+
+<!--
+	
 
 
 	{% block body_block %}
 	{% endblock %}
 
 
-<br />
-<br />
 <footer class="page-footer font-small pt-4">
   <div class="footer-copyright text-center py-3">© 2021 Copyright:<a href="#"> Glasgow4Freshers</a></div>
 </footer>
-
+!-->
 	</body>
 </html>
