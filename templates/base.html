@@ -78,11 +78,11 @@
 
 #hero {
   width: 100%;
-  position: relative;
   background: #0000b2;
   padding: 0;
   color: white;
-  height: 650px;
+  height: auto;
+  overflow: hidden;
 }
 
 #hero h2 {
@@ -123,7 +123,6 @@
 }
 
 
-
 	</style>
 	</head>
 
@@ -140,43 +139,17 @@
 			</ul>
 		</nav>
 
-<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
-    <div style="margin-bottom: 50px; font-size: 2em; font-family: 'Ubuntu'"; class="d-inline-flex p-2">Please Choose A Category:</div>
-<section class="features">
-      <div class="container">
-        <div class="row">
-        <a href="#">
-          <div class="col">
-              <i style="font-size: 2rem;" class="bi-binoculars"></i>
-              <p>Entertainment</p>
-          </div>
-          </a>
-            
-            <a href="#">
-          <div class="col">
-            <i style="font-size: 2rem;" class="bi-clock-history"></i>
-			<p>Historical</p>
-          </div>          </a>
 
-            <a  href="#">
-          <div class="col">
-             <i style="font-size: 2rem;" class="bi-tree"></i>
-             <p>Parks</p>
-          </div>
-          </a>
+<div id="hero" class="d-flex flex-column justify-content-end align-items-center">
+   
+   {% block body_block %}
 
-            <a href="#">
-          <div class="col">
-              <i style="font-size: 2rem;" class="bi-book"></i>
-              <p>Educational</p>
-          </div>
-           </a>
-
-        </div>
-    </div>
-</section>
+   {% endblock %}
 
 
+
+
+<div style="padding: 0; margin: 0;" class="container-fluid">
     <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
       <defs>
         <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
@@ -191,16 +164,13 @@
         <use xlink:href="#wave-path" x="50" y="9" fill="rgba(255,255,255, .2)">
       </g>
     </svg>
+</div>
 
-  </section>
+  </div>
 
 
 <!--
-	
 
-
-	{% block body_block %}
-	{% endblock %}
 
 
 <footer class="page-footer font-small pt-4">
