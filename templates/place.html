@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+	<div style="text-align: left; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
+    <div class="row">
+                  <div class="col">
+    <h2 style="color: black">Place Name</h2>
+  </div>
+  </div>
+      <div class="row">
+            <div class="col">
+                 <img src="https://www.whatsonnetwork.co.uk/uploads/800x600/a60b537d0c351478077a8dca839f353b.jpg" alt="..." class="img-fluid">
+            </div>
+      </div>   
+        <div class="row">
+            <div class="col">
+                 <p>Place Description</p>
+            </div>
+      </div>   
+      <hr />
+      <h2 style="color: black">Reviews</h2>
+      <h4><b>Average Review: /5</b></h4>
+
+      <h4><b>Reviews From Users:</b></h4>
+
+
+      <hr />
+      <h2 style="color: black">Leave A Review: </h2>
+      <form>
+    <div class="form-group">
+    <label for="ratinginput">Rating (/5)</label>
+    <input type="email" class="form-control" id="ratinginput">
+  </div>
+  <div class="form-group">
+    <label for="reviewtext">Review Text: </label>
+    <textarea class="form-control" id="reviewtext" rows="3"></textarea>
+  </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+	  </div>
+
+
+
+
+{% endblock  %}

@@ -19,3 +19,6 @@ def show_category(request, category_name_slug):
 		context_dict['places'] = None
 
 	return render(request, 'categories.html', context=context_dict)
+
+def placeTesting(request):
+	return render(request, 'place.html')
