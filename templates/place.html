@@ -2,10 +2,11 @@
 {% load staticfiles %}
 
 {% block body_block %}
-	<div style="text-align: left; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
+  {% if place %}
+	<div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
     <div class="row">
                   <div class="col">
-    <h2 style="color: black">Place Name</h2>
+    <h2 style="color: black">{{ place.name }}</h2>
   </div>
   </div>
       <div class="row">
@@ -15,23 +16,51 @@
       </div>   
         <div class="row">
             <div class="col">
-                 <p>Place Description</p>
+                 <p>{{ place.description }}</p>
             </div>
       </div>   
       <hr />
       <h2 style="color: black">Reviews</h2>
       <h4><b>Average Review: /5</b></h4>
       <h4><b>Reviews From Users:</b></h4>
+      {% if reviews %}
+      {% for review in reviews %}
       <hr />
-      <div class="container">
-        Username: <br />
-        Rating:  <br />
-        Review Text: <br />
-      </div>
-      <hr />
+      <div class="review p-5">
+                    <div class="row d-flex">
+                        <div class="profile-pic">
+                        <img style="border-radius: 50%"  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" width="80px" height="80px">
+                      </div>
+                        <div style="text-align: left;" class="d-flex flex-column pl-3">
+                            <h4>{{review.name}}</h4>
+                            <p>{{review.review_date}}</p>
+                        </div>
+                    </div>
+                    <div class="row pb-3">
+                        <div>
+                            <h5 class="mb-0 pl-3">{{ review.text }}</h5>
+                        </div>
+                    </div>
+                    <div class="row pb-3">
+                        <p>This dive center is incredibly well organized and is at the top of its game.</p>
+                    </div>
+                    <div class="row pb-3">
+                      <button style=" background-color:rgba(38,166,154 ,0.3); width: 49.5%;"class="like">
+                          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                          <p>{{ review.likes }}</p>
+                        </button>
+                      <button style="margin-left: 1%; width: 49.5%; background-color: rgba(255,138,128 ,0.3);" class="dislike">
+                          <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                          <p>{{ review.dislikes }}</p>
+                        </button>
+                    </div>
+                  </div>
+                  <hr />
+      {% endfor %}
+      {% endif %}
       <hr />
       <h2 style="color: black">Leave A Review: </h2>
-      <form>
+      <form style="text-align: left;">
     <div class="form-group">
     <label for="ratinginput">Rating (/5)</label>
     <input type="email" class="form-control" id="ratinginput">
@@ -44,6 +73,7 @@
 </form>
 	  </div>
 
+  {% endif %}
 
 
 

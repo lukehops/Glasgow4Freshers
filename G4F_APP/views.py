@@ -26,7 +26,15 @@ def show_place(request, category_name_slug, place_name_slug):
 	try:
 		place = Place.objects.get(slug=place_name_slug)
 		context_dict['place'] = place
-	except Category.DoesNotExist:
+	except Place.DoesNotExist:
 		context_dict['place'] = None
+
+
+	try:
+		reviews = Review.objects.filter(place=place)
+		context_dict['reviews'] = reviews
+	except Review.DoesNotExist:
+		context_dict['reviews'] = None
+
 
 	return render(request, 'place.html', context=context_dict)
