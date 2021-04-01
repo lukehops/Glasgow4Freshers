@@ -2,46 +2,35 @@
 {% load staticfiles %}
 
 {% block title_block %} 
-	Homepage
+  {% if category %}
+      {{ category.name }} 
+    {% else %}
+          Unknown Category
+    {% endif %}
 {% endblock %}
 
 {% block body_block %}
+  {% if category %}
+      <h2 style="font-family: 'Ubuntu'">{{ category.name }}</h2>
+    {% else %}
+          <h2>Unknown Category</h2>
+    {% endif %}
+
+    {% if places %}
+    {% for place in places %}
 	<div style="text-align: left; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
       <div class="row">
             <div class="col">
                  <img src="https://www.whatsonnetwork.co.uk/uploads/800x600/a60b537d0c351478077a8dca839f353b.jpg" alt="..." class="img-thumbnail">
             </div>
             <div class="col-8">
-                 <h2 style="color: black">Category Name</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis in augue nec fermentum. Nullam laoreet sit amet dolor non maximus. Sed non aliquam neque. Nulla quis eros nec elit fermentum posuere. Ut ac vulputate tellus, et ultrices justo. Nullam volutpat risus ac nunc consectetur venenatis. Nullam malesuada arcu nisi, non iaculis enim vestibulum varius. Etiam tincidunt nisl a orci varius placerat et sed sapien.</p>
+                 <h2 style="color: black">{{ place.name }}</h2>
+                 <p>{{ place.description }}</p>
             </div>
       </div>    
 	  </div>
-
-      <div style="text-align: left; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px;" class="container">
-      <div class="row">
-            <div class="col">
-                 <img src="https://www.whatsonnetwork.co.uk/uploads/800x600/a60b537d0c351478077a8dca839f353b.jpg" alt="..." class="img-thumbnail">
-            </div>
-            <div class="col-8">
-                 <h2 style="color: black">Category Name</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis in augue nec fermentum. Nullam laoreet sit amet dolor non maximus. Sed non aliquam neque. Nulla quis eros nec elit fermentum posuere. Ut ac vulputate tellus, et ultrices justo. Nullam volutpat risus ac nunc consectetur venenatis. Nullam malesuada arcu nisi, non iaculis enim vestibulum varius. Etiam tincidunt nisl a orci varius placerat et sed sapien.</p>
-            </div>
-      </div>    
-    </div>
-
-      <div style="text-align: left; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px;" class="container">
-      <div class="row">
-            <div class="col">
-                 <img src="https://www.whatsonnetwork.co.uk/uploads/800x600/a60b537d0c351478077a8dca839f353b.jpg" alt="..." class="img-thumbnail">
-            </div>
-            <div class="col-8">
-                 <h2 style="color: black">Category Name</h2>
-                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis in augue nec fermentum. Nullam laoreet sit amet dolor non maximus. Sed non aliquam neque. Nulla quis eros nec elit fermentum posuere. Ut ac vulputate tellus, et ultrices justo. Nullam volutpat risus ac nunc consectetur venenatis. Nullam malesuada arcu nisi, non iaculis enim vestibulum varius. Etiam tincidunt nisl a orci varius placerat et sed sapien.</p>
-            </div>
-      </div>    
-    </div>
-
+    {% endfor %}
+    {% endif %}
 
 
 {% endblock  %}
