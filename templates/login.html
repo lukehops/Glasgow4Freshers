@@ -5,9 +5,9 @@ Login
 {% endblock %}
 
 {% block body_block %}
-{% csrf_token %}
 <div style="background: white; border-radius: 5px; color: black; margin-top: 10px;" class="container">
 <form id="login_form" method="post" action="{% url 'login' %}">
+	{% csrf_token %}
   <h1>Login to Glasgow4Freshers</h1>
   <div class="form-group">
     <label for="username">Username</label>
