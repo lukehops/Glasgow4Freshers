@@ -137,14 +137,16 @@
 			<a style="color: white;" class="navbar-brand" href="/"><b>GLASGOW4FRESHERS</b></a>
 			<ul class="navbar-nav ml-auto">
 			    <li class="nav-item">
-			      <a style="color: white" class="nav-link" href='login'>Login</a>
+			      <a style="color: white" class="nav-link" href="{% url 'login' %}">Login</a>
 			    </li>
 			    <li class="nav-item">
-			      <a style="color: white" class="nav-link" href='register'>Register</a>
+			      <a style="color: white" class="nav-link" href="{% url 'register' %}">Register</a>
 			    </li>
+			    {% if user.is_authenticated %}
 			    <li class="nav-item">
-			      <a style="color: white" class="nav-link" href='logout'>Logout</a>
+			      <a style="color: white" class="nav-link" href="{% url 'logout' %}">Logout</a>
 			    </li>
+			    {% endif %}
 			</ul>
 		</nav>
 
