@@ -20,7 +20,7 @@ class Category(models.Model):
 class Place(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	name = models.CharField(max_length=128)
-	description = models.TextField()
+	description = models.CharField(max_length=10000)
 	slug = models.SlugField(unique=True)
 
 	def save(self, *args, **kwargs):
