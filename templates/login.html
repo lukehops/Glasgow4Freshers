@@ -5,13 +5,21 @@ Login
 {% endblock %}
 
 {% block body_block %}
-<h1>Login to Glasgow4Freshers</h1>
+<div style="background: white; border-radius: 5px; color: black; margin-top: 10px;" class="container">
 <form id="login_form" method="post" action="{% url 'login' %}">
-{% csrf_token %}
-Username: <input type="text" name="username" value="" size="50" />
-<br />
-Password: <input type="password" name="password" value="" size="50" />
-<br />
-<input type="submit" value="submit" />
+	{% csrf_token %}
+  <h1>Login to Glasgow4Freshers</h1>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" name="password" class="form-control" id="username" placeholder="Enter Username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" name="username" class="form-control" id="password" placeholder="Password">
+  </div>
+  <button type="submit" value="submit" class="btn btn-primary">Submit</button>
 </form>
+<br />
+</div>
 {% endblock %}
+
