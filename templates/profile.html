@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Profile for {{ selected_user.username }}
+{% endblock %}
+
+{% block body_block %}
+<div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
+	<h1 class="jumbotron-heading">{{ selected_user.username }}'s Profile</h1>
+</div>
+
+<div class="container">
+<div class="row">
+<img src="{{ MEDIA_URL }}{{ user_profile.picture }}"
+width="300"
+height="300"
+alt="{{ selected_user.username }}'s profile image" />
+<br />
+<div>
+{% if selected_user == user %}
+<form method="post" action="." enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit" value="Update Profile picture" class="btn btn-primary">Update</button>
+</form>
+{% endif %}
+</div>
+</div>
+</div>
+{% endblock %}

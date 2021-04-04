@@ -147,6 +147,11 @@
 			      <a style="color: white" class="nav-link" href="{% url 'logout' %}">Logout</a>
 			    </li>
 			    {% endif %}
+			     {% if user.is_authenticated %}
+			    <li class="nav-item">
+			      <a style="color: white" class="nav-link" href="{% url 'profile' user.username %}">User profile</a>
+			    </li>
+			    {% endif %}
 			</ul>
 		</nav>
 

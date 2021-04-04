@@ -14,11 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
 from G4F_APP import views
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import url
+from django.conf.urls import url 
+from registration.backends.simple.views import RegistrationView
+from django.urls import reverse, include, path
+
+
+
+class MyRegistrationView(RegistrationView):
+    def get_success_url(self, user):
+        return reverse('register_profile')
 
 app_name = 'G4F_APP'
 urlpatterns = [
@@ -29,4 +36,8 @@ urlpatterns = [
     path('register/', views.register, name='register'), 
     path('login/', views.user_login, name='login'),
     path('logout/', views.user_logout, name='logout'),
+    path('accounts/register/', MyRegistrationView.as_view(), name='registration_register'),
+    path('accounts/', include('registration.backends.simple.urls')),
+    path('register_profile/', views.register_profile, name='register_profile'),
+    path('profile/<username>/', views.ProfileView.as_view(), name='profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
