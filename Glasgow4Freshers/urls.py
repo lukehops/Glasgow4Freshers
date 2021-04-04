@@ -25,4 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('category/<slug:category_name_slug>/', views.show_category, name='show_category'),
     path('category/<slug:category_name_slug>/<slug:place_name_slug>', views.show_place, name='show_place'),
+    path('register/', views.register, name='register'), 
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
