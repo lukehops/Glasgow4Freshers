@@ -45,6 +45,12 @@ def show_place(request, category_name_slug, place_name_slug):
 	except Review.DoesNotExist:
 		context_dict['reviews'] = None
 
+	try:
+		category = Category.objects.get(slug=category_name_slug)
+		context_dict['category'] = category
+	except Category.DoesNotExist:
+		context_dict['category'] = None
+
 
 	return render(request, 'place.html', context=context_dict)
 
@@ -99,6 +105,7 @@ def user_logout(request):
 	logout(request)
 	return redirect(reverse('index'))
 
+
 @login_required
 def register_profile(request):
 	form = UserProfileForm()
@@ -150,4 +157,26 @@ class ProfileView(View):
 			print(form.errors)
 		context_dict = {'user_profile': user_profile, 'selected_user': user, 'form': form}
 		return render(request, 'profile.html', context_dict)
+
+
+from datetime import datetime
+
+@login_required
+def leave_review(request):
+        context_dict = {}
+        if request.method == "POST":
+                rating = request.POST.get('rating')
+
+                if int(rating) < 0 or int(rating) > 5:
+                	return HttpResponse("Rating must be between 0 and 5.")
+
+                review_text = request.POST.get('review_text')
+                place = Place.objects.get(name=request.POST.get('place'))
+                date = datetime.now()
+                user = request.user
+                print(request.POST.get('url'))
+                context_dict['url'] = request.POST.get('url')
+                Review.objects.create(place=place, rating=rating, review_text=review_text, name=user, review_date=date, likes=0, dislikes=0)
+        return render(request, 'review-success.html', context=context_dict)
+
 

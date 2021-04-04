@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %} 
+	Homepage
+{% endblock %}
+
+{% block body_block %}
+<div style="background: white; border-radius: 5px; color: black; margin-top: 10px;" class="container">
+	<h3>Review Posted Successfully</h3>
+
+
+  {% if url %}
+    <a href="{{ url }}">Go Back</a>
+    {% endif %}
+</div>
+{% endblock  %}

@@ -40,4 +40,5 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('register_profile/', views.register_profile, name='register_profile'),
     path('profile/<username>/', views.ProfileView.as_view(), name='profile'),
+    path('leave_review/', views.leave_review, name='leave_review'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
