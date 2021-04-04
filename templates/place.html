@@ -25,7 +25,6 @@ $(function() {
 span.star-system, span.star-system>* {
     display: inline-block;
     background: url({{MEDIA_URL}}star.png) 0 25px repeat-x;
-    width: 80px;
     height: 16px;
 }
 span.star-system>*{
@@ -44,7 +43,7 @@ span.star-system>*{
   </div>
       <div class="row">
             <div class="col">
-                 <img src="https://www.whatsonnetwork.co.uk/uploads/800x600/a60b537d0c351478077a8dca839f353b.jpg" alt="..." class="img-fluid">
+                 <img src="{{MEDIA_URL}}{{place.name}}/img1.jpg" alt="..." class="img-fluid">
             </div>
       </div>   
         <div class="row">
@@ -70,12 +69,7 @@ span.star-system>*{
                         </div>
                     </div>
                     <div class="row pb-3">
-                        <div>
-                            <h5 class="mb-0 pl-3">{{ review.text }}</h5>
-                        </div>
-                    </div>
-                    <div class="row pb-3">
-                        <p>This dive center is incredibly well organized and is at the top of its game.</p>
+                        <p>{{ review.review_text }}</p>
                     </div>
                       <div class="row pb-3">
                         <p><b>Rating: {{ review.rating }} (<span class="star-system">{{ review.rating }}</span>)
