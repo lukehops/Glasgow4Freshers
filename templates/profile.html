@@ -71,6 +71,8 @@ alt="{{ selected_user.username }}'s profile image" />
                     </div>
                   </div>
       {% endfor %}
+      {% else %}
+      <p>This user has not made any reviews</p>
       {% endif %}
       <hr />
 </div>

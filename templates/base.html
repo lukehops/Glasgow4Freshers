@@ -144,12 +144,17 @@
 			    </li>
 			    {% if user.is_authenticated %}
 			    <li class="nav-item">
-			      <a style="color: white" class="nav-link" href="{% url 'logout' %}">Logout</a>
+			      <a style="color: white" class="nav-link" href="{% url 'profile' user.username %}">User Profile</a>
+			    </li>
+			    {% endif %}
+			    {% if user.is_authenticated %}
+			    <li class="nav-item">
+			      <a style="color: white" class="nav-link" href="{% url 'list_profiles' %}">All Profiles</a>
 			    </li>
 			    {% endif %}
 			     {% if user.is_authenticated %}
 			    <li class="nav-item">
-			      <a style="color: white" class="nav-link" href="{% url 'profile' user.username %}">User profile</a>
+			      <a style="color: white" class="nav-link" href="{% url 'logout' %}">Logout</a>
 			    </li>
 			    {% endif %}
 			</ul>

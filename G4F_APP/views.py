@@ -164,6 +164,11 @@ class ProfileView(View):
 		context_dict = {'user_profile': user_profile, 'selected_user': user, 'form': form}
 		return render(request, 'profile.html', context_dict)
 
+class ListProfilesView(View):
+	@method_decorator(login_required)
+	def get(self, request):
+		profiles = UserProfile.objects.all()
+		return render(request, 'list_profiles.html', {'userprofile_list': profiles})
 
 from datetime import datetime
 
