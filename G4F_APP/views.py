@@ -33,6 +33,7 @@ def show_category(request, category_name_slug):
 def show_place(request, category_name_slug, place_name_slug):
 	context_dict = {}
 
+
 	try:
 		place = Place.objects.get(slug=place_name_slug)
 		context_dict['place'] = place
@@ -43,6 +44,16 @@ def show_place(request, category_name_slug, place_name_slug):
 	try:
 		reviews = Review.objects.filter(place=place)
 		context_dict['reviews'] = reviews
+
+		if(len(reviews) > 0):
+			review_avg = 0
+			for review in reviews:
+				review_avg += int(review.rating)
+
+			review_avg = review_avg / len(reviews)
+			review_avg = round(review_avg, 2)
+			context_dict['review_average'] = review_avg
+
 	except Review.DoesNotExist:
 		context_dict['reviews'] = None
 
@@ -197,7 +208,7 @@ def leave_review(request):
                 review_text = request.POST.get('review_text')
                 place = Place.objects.get(name=request.POST.get('place'))
                 date = datetime.now()
-                user = request.user
+                user = User.objects.get(username=request.user)
                 print(request.POST.get('url'))
                 context_dict['url'] = request.POST.get('url')
                 Review.objects.create(place=place, rating=rating, review_text=review_text, name=user, review_date=date, likes=0, dislikes=0)

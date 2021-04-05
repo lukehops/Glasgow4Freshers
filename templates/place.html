@@ -53,7 +53,9 @@ span.star-system>*{
       </div>   
       <hr />
       <h2 style="color: black">Reviews</h2>
-      <h4><b>Average Review: /5</b></h4>
+      {% if review_average %}
+      <h4><b>Average Review: {{ review_average }}/5</b></h4>
+      {% endif %}
       <h4><b>Reviews From Users:</b></h4>
       {% if reviews %}
       {% for review in reviews %}
@@ -96,6 +98,7 @@ span.star-system>*{
                     {% endif%}
                   </div>
                   <hr />
+                </div>
       {% endfor %}
       {% endif %}
       <hr />
