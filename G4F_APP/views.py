@@ -4,11 +4,12 @@ from G4F_APP.models import Category, Place, Review, UserProfile
 from G4F_APP.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views import View
+from django.views.generic.edit import DeleteView
 
 
 # Create your views here.
@@ -169,6 +170,12 @@ class ListProfilesView(View):
 	def get(self, request):
 		profiles = UserProfile.objects.all()
 		return render(request, 'list_profiles.html', {'userprofile_list': profiles})
+
+class DeleteReviewView(DeleteView):
+	model = Review
+	template_name = 'delete_view.html'
+	success_url = reverse_lazy('index')
+
 
 from datetime import datetime
 

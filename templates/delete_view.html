@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Delete Review
+{% endblock %}
+
+{% block body_block %}
+<div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
+	<hr />
+	<h1 class="jumbotron-heading">Delete Review</h1>
+	<hr />
+<hr />
+<p>Click the button below to delete your review</p>
+<div class = "form-group">
+	<form method = "POST">
+		{% csrf_token %}
+		<button class = "btn btn-primary">Delete Review</button>
+</form>
+</div>
+<hr />
+</div>
+{% endblock %}
