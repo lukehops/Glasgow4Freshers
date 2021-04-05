@@ -6,9 +6,12 @@ Register
 {% endblock %}
 
 {% block body_block %}
-<h1>Register for Glasgow4Freshers</h1>
+<div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
+	<hr />
+	<h1 class="jumbotron-heading">Register for Glasgow4Freshers</h1>
+	<hr />
 {% if registered %}
-<strong>thank you for registering!</strong>
+<strong>Thank you for registering!</strong>
 <a href="{% url 'index' %}">Return to the homepage.</a><br />
 {% else %}
 <br />
@@ -22,7 +25,8 @@ enctype="multipart/form-data">
 {{ profile_form.as_p }}
 
 <!-- Provide a button to click to submit the form. -->
-<input type="submit" name="submit" value="Register" />
+<button class = "btn btn-primary">Register</button>
 </form>
 {% endif %}
+</div>
 {% endblock %}
