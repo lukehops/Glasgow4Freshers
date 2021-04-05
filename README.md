@@ -38,5 +38,5 @@ AJAX will be used to add likes/dislikes for each review.
 ***
 
 ### External Sources Used
-Bootstrap, jQuery, Google Fonts, FontAwesome
+Bootstrap, jQuery, Google Fonts, FontAwesome, W3
 
