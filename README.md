@@ -33,3 +33,10 @@ Users will be able to view the place through the google maps and google earth AP
 Users will be able to view a collection of images for each place, in the form of a Javascript slideshow. 
 
 AJAX will be used to add likes/dislikes for each review. 
+
+
+***
+
+### External Sources Used
+Bootstrap, jQuery, Google Fonts, FontAwesome
+
