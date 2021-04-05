@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 from django.conf.urls import url 
 from registration.backends.simple.views import RegistrationView
 from django.urls import reverse, include, path
-from G4F_APP.views import DeleteReviewView
+from G4F_APP.views import DeleteReviewView, EditReviewView
 
 
 
@@ -43,5 +43,6 @@ urlpatterns = [
     path('profile/<username>/', views.ProfileView.as_view(), name='profile'),
     path('profiles/', views.ListProfilesView.as_view(), name='list_profiles'),
     path('delete/<int:pk>', DeleteReviewView.as_view(), name='delete_view'),
+    path('edit/<int:pk>/review', EditReviewView.as_view(), name='edit_review'),
     path('leave_review/', views.leave_review, name='leave_review'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

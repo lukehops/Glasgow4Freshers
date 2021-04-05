@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Edit Review
+{% endblock %}
+
+{% block body_block %}
+<div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
+	<hr />
+	<h1 class="jumbotron-heading">Edit Review</h1>
+	<hr />
+<hr />
+<p>Click the button below to submit your edited review</p>
+<div class = "form-group">
+	<form method = "POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button class = "btn btn-primary">Edit Review</button>
+</form>
+</div>
+<hr />
+</div>
+{% endblock %}

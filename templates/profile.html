@@ -6,6 +6,36 @@ Profile for {{ selected_user.username }}
 {% endblock %}
 
 {% block body_block %}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script>
+$.fn.starsystem = function() {
+    return $(this).each(function() {
+        var ratingwidth = parseFloat($(this).html()) * 16;
+        var $span = $('<span />').width(ratingwidth);
+        $(this).html($span);
+    });
+}
+
+$(function() {
+    $('span.star-system').starsystem();
+});
+
+</script>
+
+
+<style>
+  
+span.star-system, span.star-system>* {
+    display: inline-block;
+    background: url({{MEDIA_URL}}star.png) 0 25px repeat-x;
+    height: 16px;
+}
+span.star-system>*{
+    max-width:80px;
+    background-position: 0 0;
+}
+</style>
+
 <div style="text-align: center; background: white; border-radius: 10px; padding: 5px; color: black; margin-bottom: 10px; margin-top: 30px;" class="container">
 	<hr />
 	<h1 class="jumbotron-heading">{{ selected_user.username }}'s Profile</h1>
@@ -61,16 +91,9 @@ alt="{{ selected_user.username }}'s profile image" />
                     </div>
 
                     <!-- Logged in users only that own the review or ADMIN user logged in !-->
-                     <div class="row pb-3">
-                      <button style=" width: 49.5%;"class="btn-success">
-                        Edit
-                       </button>
-                      
-                    
-			        <a style="color: red" class="nav-link" href="{% url 'delete_view' review.pk %}">Delete</a>
-			        
-                         
-                       </form>
+                    <div class="row pb-3">
+                    <a style="color: green" class="nav-link" href="{% url 'edit_review' review.pk %}">Edit</a>
+                    <a style="color: red" class="nav-link" href="{% url 'delete_view' review.pk %}">Delete</a>
                         
                     </div>
                   </div>

@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views import View
-from django.views.generic.edit import DeleteView
+from django.views.generic.edit import DeleteView, UpdateView
 
 
 # Create your views here.
@@ -174,6 +174,12 @@ class ListProfilesView(View):
 class DeleteReviewView(DeleteView):
 	model = Review
 	template_name = 'delete_view.html'
+	success_url = reverse_lazy('index')
+
+class EditReviewView(UpdateView):
+	model = Review
+	template_name = 'edit_review.html'
+	fields = ['rating', 'review_text']
 	success_url = reverse_lazy('index')
 
 
