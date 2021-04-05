@@ -42,8 +42,8 @@ span.star-system>*{
 	<hr />
 
 
-<div class="container">
-<div class="row">
+<div class="container-fluid">
+<div class="row" style="margin-left: 20%">
 <img src="{{ MEDIA_URL }}{{ user_profile.picture }}"
 width="150"
 height="150"
@@ -54,7 +54,7 @@ alt="{{ selected_user.username }}'s profile image" />
 <form method="post" action="." enctype="multipart/form-data">
 {% csrf_token %}
 {{ form.as_p }}
-<button style="margin-left: 100%; width: 49.5%;" class="btn btn-primary">Update</button>
+<button style="width: 100%;" class="btn btn-primary">Update</button>
 </form>
 {% endif %}
 </div>
