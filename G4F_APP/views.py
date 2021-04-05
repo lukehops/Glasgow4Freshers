@@ -135,11 +135,17 @@ class ProfileView(View):
 
 	@method_decorator(login_required)
 	def get(self, request, username):
+		context_dict = {}
 		try:
 			(user, user_profile, form) = self.get_user_details(username)
 		except TypeError:
 			return redirect(reverse('index'))
 		context_dict = {'user_profile': user_profile, 'selected_user': user, 'form': form}
+		try:
+			reviews = Review.objects.filter(name=username)
+			context_dict['reviews'] = reviews
+		except Review.DoesNotExist:
+			context_dict['reviews'] = None
 		return render(request, 'profile.html', context_dict)
 
 
